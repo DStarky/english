@@ -11,13 +11,15 @@ const week = {
   6: "saturday",
 };
 
-const today = new Date();
- 
-const todayPlan = document.querySelector(`.${week[today.getDay()]}`); // it doesnt work
-
-
 grid.addEventListener("click", function (event) {
-  if (event.target.classList.contains("check")) {
+  if (event.target.classList.contains("grid__check")) {
     event.target.parentNode.classList.toggle("cross");
+    const square = window.getComputedStyle(event.target.parentNode, '::before');
   }
 });
+
+(function () {
+  const today = new Date();
+  const todayPlan = document.querySelector(`#${week[today.getDay()]}`); // it doesnt work
+  todayPlan.classList.add('today');
+})();

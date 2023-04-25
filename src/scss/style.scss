@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: rgba(17, 17, 26, 0.85);
 }
 
 .container {
@@ -10,9 +14,10 @@
   margin: 0 auto;
 }
 .header {
-  padding: 20px;
+  font-family: "Castoro Titling", cursive;
+  padding: 30px;
   text-align: center;
-  height: 100px;
+  height: 130px;
 
   &__title {
     text-transform: uppercase;
@@ -25,7 +30,7 @@
 
 .grid {
   display: grid;
-  height: calc(95vh - 100px);
+  height: calc(95vh - 130px);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
@@ -34,7 +39,6 @@
 
   &__item {
     padding: 30px;
-    border: 1px solid black;
     border-radius: 16px;
     height: 100%;
     width: 100%;
@@ -42,17 +46,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    & input[type="checkbox"] {
-      margin-right: 12px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    transition: box-shadow 1s ease;
+    &:hover {
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
     }
   }
 
   &__title {
+    font-family: "Castoro Titling", cursive;
     margin-bottom: 8px;
   }
 
   &__subtitle {
+    font-family: "Caveat", cursive;
+    font-size: 26px;
     margin-bottom: 16px;
   }
 
@@ -66,8 +76,61 @@
       margin-bottom: 8px;
     }
   }
+
+  &__check {
+    margin-right: 12px;
+    opacity: 0;
+    &:checked + .grid__text::after {
+      display: block;
+    }
+  }
+
+  &__text {
+    position: relative;
+    cursor: pointer;
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 4px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -30px;
+    }
+
+    &::after {
+      content: "";
+      background-color: green;
+      text-decoration: none;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -24px;
+      z-index: 1;
+      display: none;
+    }
+  }
 }
 
-.cross{
-  text-decoration: line-through;
+.cross {
+  opacity: 0.5;
+}
+
+.today {
+  box-shadow: rgba(0, 195, 255, 0.1) 0px 1px 0px,
+    rgba(0, 195, 255, 0.1) 0px 8px 24px, rgba(0, 195, 255, 0.1) 0px 16px 48px;
+
+  &:hover {
+    box-shadow: rgba(0, 195, 255, 0.2) 0px 1px 0px,
+      rgba(0, 195, 255, 0.2) 0px 8px 24px, rgba(0, 195, 255, 0.1) 0px 16px 48px;
+  }
 }
