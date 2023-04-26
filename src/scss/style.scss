@@ -78,7 +78,7 @@
   }
 
   &__check {
-    margin-right: 12px;
+
     opacity: 0;
     &:checked + .grid__text::after {
       display: block;
@@ -86,6 +86,8 @@
   }
 
   &__text {
+    display: block;
+    margin: 0 32px 0 52px;
     position: relative;
     cursor: pointer;
     font-family: "Caveat", cursive;
@@ -101,7 +103,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: -30px;
+      left: -35px;
     }
 
     &::after {
@@ -114,7 +116,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: -24px;
+      left: -29px;
       z-index: 1;
       display: none;
     }
