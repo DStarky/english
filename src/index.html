@@ -10,7 +10,25 @@
 </head>
 
 <body>
-<div class="container">
+
+  <div class="button">
+    <div class="button__open">
+      <p class="button__text">Таймер</p>
+    </div>
+    <div class="timer">
+      <div class="button__hide"></div>
+      <div class="timer__main">
+        <div class="timer__time"><span class="minutes">25</span><span class="splitter">:</span><span
+            class="secundes">00</span></div>
+        <div class="timer__buttons">
+          <button class="timer__start">start</button>
+          <button class="timer__reset">reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
     <header class="header">
       <h1 class="header__title">Dima learns English</h1>
       <p class="header__subtitle">Every day, I need to visit this page and find out what I need to learn</p>
@@ -23,7 +41,7 @@
           <li class="grid__list-element">
             <label class="grid__checkbox">
               <input class="grid__check" type="checkbox" name="todo[]" value="task1">
-              <span class="grid__text">Повторить все доступные слова  на данный момент</span>
+              <span class="grid__text">Повторить все доступные слова на данный момент</span>
             </label>
           </li>
           <li class="grid__list-element">
@@ -161,7 +179,7 @@
         </ul>
       </div>
     </main>
-</div>
+  </div>
   <script src="scripts/main.min.js"></script>
 </body>
 

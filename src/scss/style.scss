@@ -1,11 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
+$title-font: "Castoro Titling", cursive;
+$task-font: "Caveat", cursive;
+
+$button-color: coral;
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   color: rgba(17, 17, 26, 0.85);
+}
+
+body {
+  position: relative;
 }
 
 .container {
@@ -14,7 +23,7 @@
   margin: 0 auto;
 }
 .header {
-  font-family: "Castoro Titling", cursive;
+  font-family: $title-font;
   padding: 30px;
   text-align: center;
   height: 130px;
@@ -56,12 +65,12 @@
   }
 
   &__title {
-    font-family: "Castoro Titling", cursive;
+    font-family: $title-font;
     margin-bottom: 8px;
   }
 
   &__subtitle {
-    font-family: "Caveat", cursive;
+    font-family: $task-font;
     font-size: 26px;
     margin-bottom: 16px;
   }
@@ -78,7 +87,6 @@
   }
 
   &__check {
-
     opacity: 0;
     &:checked + .grid__text::after {
       display: block;
@@ -90,7 +98,7 @@
     margin: 0 32px 0 52px;
     position: relative;
     cursor: pointer;
-    font-family: "Caveat", cursive;
+    font-family: $task-font;
     font-size: 24px;
 
     &::before {
@@ -134,5 +142,92 @@
   &:hover {
     box-shadow: rgba(0, 195, 255, 0.2) 0px 1px 0px,
       rgba(0, 195, 255, 0.2) 0px 8px 24px, rgba(0, 195, 255, 0.1) 0px 16px 48px;
+  }
+}
+
+.button {
+  position: fixed;
+  right: 0;
+  top: 100px;
+  text-align: center;
+
+  &__open {
+    cursor: pointer;
+
+    height: 120px;
+    width: 40px;
+
+    background-color: $button-color;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    writing-mode: vertical-rl;
+    color: white;
+    font-size: 24px;
+  }
+
+  &__hide {
+    cursor: pointer;
+    background-image: url(../assets/images/next.png);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 4px;
+    top: calc(50% - 12px);
+  }
+}
+
+.timer {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 120px;
+  width: 200px;
+  background-color: #fff;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding: 10px;
+
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  transition: box-shadow 1s ease;
+  &:hover {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  }
+
+  &__main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__time {
+    cursor: default;
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+    & * {
+      cursor: pointer;
+      text-transform: uppercase;
+      padding: 6px 4px;
+      border: none;
+      background-color: $button-color;
+      color: white;
+      border-radius: 4px;
+    }
   }
 }
