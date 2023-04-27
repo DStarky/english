@@ -164,6 +164,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+
+    &-active {
+      transform: translateX(40px);
+    }
   }
 
   &__text {
@@ -184,7 +191,6 @@ body {
 }
 
 .timer {
-  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -194,13 +200,19 @@ body {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   padding: 10px;
-
+  transform: translateX(200px);
   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 0px 8px;
-  transition: box-shadow 1s ease;
+
+  transition: box-shadow 1s ease, transform 0.5s ease;
+
   &:hover {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
       rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  }
+
+  &-active {
+    transform: translateX(0);
   }
 
   &__main {

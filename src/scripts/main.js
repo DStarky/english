@@ -31,11 +31,11 @@ const hideButton = document.querySelector(".button__hide");
 const timer = document.querySelector(".timer");
 
 openButton.addEventListener("click", () => {
-  openButton.style.display = "none";
-  timer.style.display = "block";
+  openButton.classList.toggle("button__open-active");
+  timer.classList.toggle("timer-active");
 });
 
 hideButton.addEventListener("click", () => {
-  openButton.style.display = "flex";
-  timer.style.display = "none";
+  timer.classList.toggle("timer-active");
+  openButton.classList.toggle("button__open-active");
 });
