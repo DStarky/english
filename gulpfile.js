@@ -38,8 +38,8 @@ function browsersync() {
   });
 }
 
-function cleanDist(){
-  return src('dist').pipe(clean())
+function cleanDist() {
+  return src("dist").pipe(clean());
 }
 
 function building() {

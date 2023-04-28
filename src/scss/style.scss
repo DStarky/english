@@ -136,12 +136,12 @@ body {
 }
 
 .today {
-  box-shadow: rgba(0, 195, 255, 0.1) 0px 1px 0px,
-    rgba(0, 195, 255, 0.1) 0px 8px 24px, rgba(0, 195, 255, 0.1) 0px 16px 48px;
+  box-shadow: rgba(255, 123, 0, 0.2) 0px 1px 0px,
+    rgba(255, 123, 0, 0.2) 0px 8px 24px, rgba(255, 123, 0, 0.2) 0px 16px 48px;
 
   &:hover {
-    box-shadow: rgba(0, 195, 255, 0.2) 0px 1px 0px,
-      rgba(0, 195, 255, 0.2) 0px 8px 24px, rgba(0, 195, 255, 0.1) 0px 16px 48px;
+    box-shadow: rgba(255, 123, 0, 0.2) 0px 1px 0px,
+      rgba(255, 123, 0, 0.2) 0px 8px 24px, rgba(255, 123, 0, 0.2) 0px 16px 48px;
   }
 }
 
